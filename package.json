@@ -1,6 +1,6 @@
 {
   "name": "ngx-mapbox-gl-srcs",
-  "version": "9.1.0",
+  "version": "9.1.1",
   "license": "MIT",
   "scripts": {
     "start": "nx serve showcase",
@@ -10,7 +10,8 @@
     "update-version": "./update_version.sh",
     "deploy-showcase": "nx build showcase --base-href '/ngx-mapbox-gl/' && cp dist/apps/showcase/index.html dist/apps/showcase/404.html && gh-pages -d dist/apps/showcase",
     "commit": "lint-staged --relative && cz --no-verify",
-    "postinstall": "ngcc --properties es2020 browser module main && husky install"
+    "postinstall": "ngcc --properties es2020 browser module main && husky install",
+    "build-and-publish": "npm run build && npm publish dist/libs/ngx-mapbox-gl/"
   },
   "standard-version": {
     "scripts": {
