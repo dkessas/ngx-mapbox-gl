@@ -109,7 +109,7 @@ export class MapService {
       //   options.accessToken || this.MAPBOX_API_KEY
       // );
       if (options.customMapboxApiUrl) {
-        (MapboxGl.baseApiUrl as string) = options.customMapboxApiUrl;
+        // (MapboxGl.baseApiUrl as string) = options.customMapboxApiUrl;
       }
       this.createMap({
         ...(options.mapOptions as MapboxGl.MapboxOptions),
@@ -512,9 +512,9 @@ export class MapService {
     }
     const lngLat: MapboxGl.LngLatLike = marker.markersOptions.feature
       ? (marker.markersOptions.feature.geometry!.coordinates as [
-          number,
-          number
-        ])
+        number,
+        number
+      ])
       : marker.markersOptions.lngLat!;
     markerInstance.setLngLat(lngLat);
     return this.zone.runOutsideAngular(() => {
